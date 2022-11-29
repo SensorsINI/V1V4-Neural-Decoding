@@ -1,0 +1,64 @@
+{
+    "run_name": "",
+    "experiment": "exp1",
+    "dataset_dir_path": "./datasets/recordings",
+    "X_file_name": "rec_neural_data.npy",
+    "Y_file_name": "rec_labels.npy",
+    "Performance_file_name": "monkey_performance.npy",
+    "seed": 42,
+    "train_val_split": 0.20,
+    "train_test_split": 0.10,
+    "recording_sessions": [
+        1,
+        2,
+        3
+    ],
+    "familiar_stimuli_only": false,
+    "drop_false_trials": false,
+    "signal_start_ms": 0,
+    "signal_end_ms": 1500,
+    "smooth_signal": 0.0,
+    "channels": "all",
+    "normalize": "regular",
+    "train_dataset_params": {
+        "loader_params": {
+            "batch_size": 256,
+            "shuffle": true,
+            "pin_memory": true
+        }
+    },
+    "val_dataset_params": {
+        "loader_params": {
+            "batch_size": 256,
+            "shuffle": false,
+            "pin_memory": true
+        }
+    },
+    "test_dataset_params": {
+        "loader_params": {
+            "batch_size": 256,
+            "shuffle": false,
+            "pin_memory": true
+        }
+    },
+    "model_params": {
+        "weighted_loss": false,
+        "lr_patience": 100,
+        "patience": 100,
+        "model_name": "CNNSE",
+        "max_epochs": 50,
+        "is_train": true,
+        "lr": 0.001,
+        "weight_decay": 0,
+        "checkpoint_path": "./checkpoints/",
+        "save_dir": "./results",
+        "load_checkpoint": -1,
+        "lr_policy": "lr_on_plateau"
+    },
+    "printout_freq": 10,
+    "model_update_freq": 1,
+    "tracking_freq": 1,
+    "tags": {
+        "model": "CNN SE MODULE"
+    }
+}
